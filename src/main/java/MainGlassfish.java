@@ -37,8 +37,6 @@ public class MainGlassfish {
         
         //Invocando el Script de Creacion de la base de datos.
         //CreateDataBase.run();
-        UsuarioDAO u = new UsuarioDAO();
-        u.crearPrimerUsuario();
         
 	// Create a scattered web application.
 	ScatteredArchive archive = new ScatteredArchive("myApp",
