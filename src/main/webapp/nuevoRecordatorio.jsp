@@ -126,6 +126,11 @@
         </style>    
     </head>
     <body>
+        <%if(request.getAttribute("mensaje")=="ok"){%>
+            <script>alert("Recordatorio agregado");</script>
+        <%}else if(request.getAttribute("mensaje")=="error"){%>
+            <script>alert("No se pudo agregar el recordatorio :(");</script>
+        <%}%>
         <div class="logo"><image src="logo_pagina.png"/></div>
         <div class="title"><h2>NUEVO RECORDATORIO</h2></div><br>
         <div class="form">
