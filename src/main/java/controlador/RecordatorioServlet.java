@@ -59,6 +59,7 @@ public class RecordatorioServlet extends HttpServlet {
             boolean inserto = this.recordatorio.insertar(recor);
             if(!inserto){
                 request.setAttribute("mensaje","ok");
+                request.setAttribute("id",idUsuario);
             }else{
                 request.setAttribute("mensaje","error");
             }
