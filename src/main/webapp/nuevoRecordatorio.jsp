@@ -127,7 +127,7 @@
     </head>
     <body>
         <%if(request.getAttribute("mensaje")=="ok"){%>
-            <script>alert("Recordatorio agregado con id "+request.getAttribute("id"));</script>
+            <script>alert("Recordatorio agregado con id ");</script>
         
         <%}else if(request.getAttribute("mensaje")=="error"){%>
             <script>alert("No se pudo agregar el recordatorio :(");</script>
