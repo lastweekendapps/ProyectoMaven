@@ -26,22 +26,6 @@ public class UsuarioDAO {
     public UsuarioDAO() {
         this.conexion = Conexion.getConnection();
     }
-    
-    public boolean crearPrimerUsuario(){
-        boolean res = false;
-        
-        String query = "INSERT INTO Usuarios VALUES (1,\"admin\",\"pass\")";
-        Statement stm;
-        try {
-            stm = this.conexion.createStatement();
-            stm.executeQuery(query);
-            res=true;
-        } catch (SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return res;
-    }
 
     public boolean insertar(UsuarioVO usuario) throws SQLException {
         boolean res = false;
