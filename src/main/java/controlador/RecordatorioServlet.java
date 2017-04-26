@@ -45,21 +45,21 @@ public class RecordatorioServlet extends HttpServlet {
             String fecha = request.getParameter("date");
             String hora = request.getParameter("hour");
             String descripcion = request.getParameter("descr");
-            //HttpSession sesion = request.getSession();
-            //UsuarioVO user = (UsuarioVO) sesion.getAttribute("user");
-            //int idUsuario = user.getId();
+            HttpSession sesion = request.getSession();
+            UsuarioVO user = (UsuarioVO) sesion.getAttribute("user");
+            int idUsuario = user.getId();
             
             RecordatorioVO recor = new RecordatorioVO();
             recor.setIdRecordatorio(id);
             recor.setDescripcion(descripcion);
             recor.setFechaRecordatorio(fecha);
             recor.setHora(hora);
-            //recor.setIdUsuario(idUsuario);
+            recor.setIdUsuario(idUsuario);
             
             boolean inserto = this.recordatorio.insertar(recor);
             if(!inserto){
                 request.setAttribute("mensaje","ok");
-                //request.setAttribute("id",idUsuario);
+                request.setAttribute("id",idUsuario);
             }else{
                 request.setAttribute("mensaje","error");
             }
