@@ -56,7 +56,13 @@ public class RecordatorioServlet extends HttpServlet {
             recor.setHora(hora);
             recor.setIdUsuario(idUsuario);
             
-            this.recordatorio.insertar(recor);
+            boolean inserto = this.recordatorio.insertar(recor);
+            if(!inserto){
+                request.setAttribute("mensaje","ok");
+            }else{
+                request.setAttribute("mensaje","error");
+            }
+            request.getRequestDispatcher("nuevoRecordatorio.jsp").forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
