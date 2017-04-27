@@ -125,7 +125,7 @@
         </style>    
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>BORRAR USUARIO</h2></div><br>
         <div class="form">
             <table text-align="center">
