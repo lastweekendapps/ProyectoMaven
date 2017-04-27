@@ -156,7 +156,7 @@
         </style>    
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>PROGRAMAS</h2></div><br>
         <%if(request.getAttribute("mensaje")=="error"){%>
             <script>alert("No se encontraron coincidencias");</script>
