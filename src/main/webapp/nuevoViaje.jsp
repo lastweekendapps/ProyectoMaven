@@ -109,7 +109,7 @@
         </style>
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>NUEVO VIAJE:</h2></div>
         <%if(request.getAttribute("mensaje") == "ok"){%>
             <script>alert("Viaje agregado");</script>
