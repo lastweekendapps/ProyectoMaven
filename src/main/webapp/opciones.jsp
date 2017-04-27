@@ -149,31 +149,31 @@
             <table>
                 <tr>
                     <td>
-                        <form target="_blank" action="nuevoCliente.jsp">
+                        <form action="nuevoCliente.jsp">
                             <input class="btn" type="submit" value="Nuevo Cliente" style="margin-left: 200px">
                         </form>
                     </td>
 
                     <td> 
-                        <form target="_blank" action="buscarCliente.jsp">
+                        <form action="buscarCliente.jsp">
                             <input class="btn" type="submit" value="Buscar Cliente">
                         </form>
                     </td>
 
                     <td>
-                        <form target="_blank" action="editarCliente.jsp">
+                        <form action="editarCliente.jsp">
                             <input class="btn" type="submit" value="Editar Cliente">
                         </form>
                     </td>
 
                     <td>
-                        <form target="_blank" action="nuevoUsuario.jsp">
+                        <form action="nuevoUsuario.jsp">
                             <input class="btn" type="submit" value="Nuevo Usuario">
                         </form>
                     </td>
 
                     <td>
-                        <form target="_blank" action="nuevoRecordatorio.jsp">
+                        <form action="nuevoRecordatorio.jsp">
                             <input class="btn" type="submit" value="Nuevo Recordatorio">
                         </form>
                     </td>
