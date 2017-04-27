@@ -148,7 +148,7 @@
         </style>    
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>LISTA DE CLIENTES</h2></div><br>
         <div class="divT">
             <table class="tabla">
