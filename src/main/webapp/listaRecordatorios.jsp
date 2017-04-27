@@ -147,7 +147,7 @@
         <title>Lista de Recordatorios</title>
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>Lista Recordatorios</h2></div>
         <%ArrayList registros = (ArrayList) request.getAttribute("recordatorios");%>
         <table>
