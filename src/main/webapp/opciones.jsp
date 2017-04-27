@@ -117,9 +117,9 @@
                 position:relative;
             }
 
-            
-
-
+            .contenedor{
+                margin-left: 230px;
+            }
         </style>
     </head>
     <body>
@@ -145,7 +145,7 @@
         
 
         <div class="h4"><h3>Escoge una de las siguientes opciones</h3></div><br><br>
-        <div>
+        <div class="contenedor">
             <table>
                 <tr>
                     <td>
@@ -177,15 +177,26 @@
                             <input class="btn" type="submit" value="Nuevo Recordatorio">
                         </form>
                     </td>
-
+                </tr>
+                <tr>
                     <td>
-                        <form target="_blank" action="programas.jsp">
-                            <input class="btn" type="submit" value="Programas">
+                        <form action="nuevoViaje.jsp">
+                            <input class="btn" type="submit" value="Nuevo Viaje">
                         </form>
                     </td>
                     <td>
-                        <form target="_blank" action="borrarUsuario.jsp">
+                        <form action="borrarUsuario.jsp">
                             <input class="btn" type="submit" value="Borrar Usuario">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="buscarRecordatorios.jsp">
+                            <input class="btn" type="submit" value="Buscar Recordatorios">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="coincidencias.jsp">
+                            <input class="btn" type="submit" value="Viajeros Solos">
                         </form>
                     </td>
                 </tr>
