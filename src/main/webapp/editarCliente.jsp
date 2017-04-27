@@ -132,7 +132,7 @@
         <%}else if(request.getAttribute("mensaje") == "error"){%>
             <script>alert("Error al editar. Asegurese de llenar correctamente todos los campos");</script>
         <%}%>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>EDITAR CLIENTE</h2></div><br>
         <div class="subtitle"><h3>Ingrese la cedula del cliente:</h3></div><br>
         <div class="fForm">
