@@ -56,11 +56,11 @@ public class RecordatorioServlet extends HttpServlet {
             recor.setHora(hora);
             recor.setIdUsuario(idUsuario);
             
-            System.out.println(rec.getIdRecordatorio());
-        System.out.println(rec.getDescripcion());
-        System.out.println(rec.getFechaRecordatorio());
-        System.out.println(rec.getHora());
-        System.out.println(rec.getIdUsuario());
+            System.out.println(recor.getIdRecordatorio());
+        System.out.println(recor.getDescripcion());
+        System.out.println(recor.getFechaRecordatorio());
+        System.out.println(recor.getHora());
+        System.out.println(recor.getIdUsuario());
             
             boolean inserto = this.recordatorio.insertar(recor);
             if(!inserto){
