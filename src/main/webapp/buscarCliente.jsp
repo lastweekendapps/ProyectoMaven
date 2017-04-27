@@ -122,7 +122,7 @@
         </style>    
     </head>
     <body>
-        <div class="logo"><image src="logo_pagina.png"/></div>
+        <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>BUSCAR CLIENTE</h2></div><br>
         <%if(request.getAttribute("mensaje") == "ok"){%>
             <script>alert("Cliente borrado");</script>
