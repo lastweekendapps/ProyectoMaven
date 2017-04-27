@@ -25,3 +25,5 @@ CREATE TABLE Recordatorios (
     Descripcion TEXT,
     IdUsuario INT REFERENCES Usuarios(IdUsuario)
 );
+
+INSERT INTO Usuarios VALUES (1,'admin','pass');
