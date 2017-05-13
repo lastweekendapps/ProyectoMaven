@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -176,5 +177,32 @@ public class ViajeDAO {
             Logger.getLogger(ViajeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return viajes;
+    }
+    
+    public ArrayList personasPorDestino() {
+        ArrayList registros = null;
+
+        String query = "SELECT Destino, count(*) AS total FROM Viajes JOIN Clientes USING (Cedula) GROUP BY Destino";
+        
+        Statement st;
+        try {
+            st = this.conexion.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                if (registros == null) {
+                    registros = new ArrayList();
+                }
+
+                String destinos = rs.getString("Destino");
+                registros.add(destinos);
+                int contador = rs.getInt("total");
+                registros.add(contador);
+            }
+            st.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViajeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return registros;
     }
 }
