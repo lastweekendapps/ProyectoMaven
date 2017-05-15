@@ -201,7 +201,7 @@
                     </td>
                     <td>
                         <form action="verGrafico.jsp">
-                            <input class="btn" type="submit" value="Viajeros Solos">
+                            <input class="btn" type="submit" value="Ver gráfico y Excel">
                         </form>
                     </td>
                 </tr>
