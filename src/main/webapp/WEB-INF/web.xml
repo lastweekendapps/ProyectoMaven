@@ -71,6 +71,10 @@
         <servlet-name>HSSFCreate</servlet-name>
         <servlet-class>com.crunchify.jsp.servlet.HSSFCreate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CorreoServlet</servlet-name>
+        <servlet-class>controlador.CorreoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
         <url-pattern>/IndexServlet</url-pattern>
@@ -134,6 +138,10 @@
     <servlet-mapping>
         <servlet-name>HSSFCreate</servlet-name>
         <url-pattern>/HSSFCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CorreoServlet</servlet-name>
+        <url-pattern>/CorreoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
