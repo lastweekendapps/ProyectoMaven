@@ -7,17 +7,10 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
@@ -27,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author PC USUARIO
+ * @author ayoro
  */
 public class CorreoServlet extends HttpServlet {
 
@@ -41,49 +34,48 @@ public class CorreoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, AddressException, MessagingException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        Properties properties = new Properties();
-            properties.put("mail.smtp.host", "smtp.gmail.com");
-            properties.put("mail.smtp.port", 587);
-            properties.put("mail.smtp.auth", "true");
-            properties.put("mail.smtp.starttls.enable", "true");
-
-            // creates a new session with an authenticator
-            Authenticator auth = new Authenticator() {
-                public PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(request.getParameter("correo"), request.getParameter("password"));
-                }
-            };
-
-            Session session = Session.getInstance(properties, auth);
-
-            // creates a new e-mail message
-            Message msg = new MimeMessage(session);
-
-            msg.setFrom(new InternetAddress(request.getParameter("correo")));
-            InternetAddress[] toAddresses = { new InternetAddress(request.getParameter("destinatario")) };
-            msg.setRecipients(Message.RecipientType.TO, toAddresses);
-            msg.setSubject(request.getParameter("asunto"));
-            msg.setSentDate(new Date());
-            // set plain text message
-            msg.setText(request.getParameter("mensaje"));
-
-            // sends the e-mail
-            Transport.send(msg);
-        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CorreoServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>"+ request.getParameter("correo") + "---" + request.getParameter("password") + "---" + request.getParameter("mensaje") +"</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            try {
+                
+                String usuario = request.getParameter("usuario");
+                String pass = request.getParameter("password");
+                String destinatario = request.getParameter("destinatario");
+                String asunto = request.getParameter("asunto");
+                String mensaje = request.getParameter("mensaje");
+
+                // Propiedades de la conexión, configuracion del servicio smtp.
+                Properties props = new Properties();
+                props.setProperty("mail.smtp.host", "smtp.gmail.com");
+                props.setProperty("mail.smtp.starttls.enable", "true");
+                props.setProperty("mail.smtp.port", "587");
+                props.setProperty("mail.smtp.user", usuario+"@gmail.com");
+                props.setProperty("mail.smtp.auth", "true");
+
+                // Preparamos la sesion
+                Session session = Session.getDefaultInstance(props);
+
+                // Construimos el mensaje
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(usuario+"@gmail.com"));
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinatario+"@gmail.com"));
+                message.setSubject(asunto);
+                message.setText(mensaje);
+
+                // Lo enviamos.
+                Transport t = session.getTransport("smtp");
+                t.connect(usuario+"@gmail.com", pass);
+                t.sendMessage(message, message.getAllRecipients());
+
+                // Cierre.
+                t.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+            
         }
     }
 
@@ -99,11 +91,7 @@ public class CorreoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (MessagingException ex) {
-            Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -117,11 +105,7 @@ public class CorreoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (MessagingException ex) {
-            Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
