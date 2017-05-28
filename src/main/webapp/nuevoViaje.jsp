@@ -124,7 +124,7 @@
         <div class="form">
             <table text-align="center">
                 
-                    <form action="NuevoClienteServlet" method="GET" id="anadir">
+                    <form action="nuevoViajeServlet" method="GET" id="anadir">
                         <tr>
                             <td>
                                 CEDULA CLIENTE: <input class="enjoy-input" type="text" name="cedula"><br><br>
