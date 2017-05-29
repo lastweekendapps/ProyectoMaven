@@ -65,11 +65,11 @@
     </servlet>
     <servlet>
         <servlet-name>ChartServlet</servlet-name>
-        <servlet-class>com.crunchify.jsp.servlet.ChartServlet</servlet-class>
+        <servlet-class>controlador.ChartServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HSSFCreate</servlet-name>
-        <servlet-class>com.crunchify.jsp.servlet.HSSFCreate</servlet-class>
+        <servlet-class>controlador.HSSFCreate</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CorreoServlet</servlet-name>
