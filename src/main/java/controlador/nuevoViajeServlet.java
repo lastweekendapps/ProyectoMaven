@@ -39,8 +39,13 @@ public class nuevoViajeServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             this.viaje = new ViajeDAO();
             this.cliente = new ClienteDAO();
-            
-            int cedula = Integer.parseInt(request.getParameter("cedula"));
+            int cedula = 0;
+            try {
+                cedula = Integer.parseInt(request.getParameter("cedula"));
+            } catch (Exception e) {
+                request.setAttribute("mensaje", "numero");
+                request.getRequestDispatcher("nuevoViaje.jsp").forward(request, response);
+            }
             ClienteVO c = this.cliente.buscar(cedula);
             if (c == null) {
                 request.setAttribute("existe", "error");
@@ -48,7 +53,13 @@ public class nuevoViajeServlet extends HttpServlet {
             }
             
             String destino = request.getParameter("destino");
-            int acompanantes = Integer.parseInt(request.getParameter("acompanantes"));
+            int acompanantes = 0;
+            try {
+                acompanantes = Integer.parseInt(request.getParameter("acompanantes"));
+            } catch (Exception e) {
+                request.setAttribute("mensaje", "numero");
+                request.getRequestDispatcher("nuevoViaje.jsp").forward(request, response);  
+            }
             String fecha = request.getParameter("fecha");
             
             ViajeVO via = new ViajeVO();

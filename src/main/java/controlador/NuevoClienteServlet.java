@@ -34,24 +34,41 @@ public class NuevoClienteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
             /* TODO output your page here. You may use following sample code. */
             this.cliente = new ClienteDAO();
-            
-            int cedula = Integer.parseInt(request.getParameter("cedula"));
+            int cedula = 0;
+            try {
+                cedula = Integer.parseInt(request.getParameter("cedula"));
+            } catch (Exception e) {
+                request.setAttribute("mensaje", "numero");
+                request.getRequestDispatcher("nuevoCliente.jsp").forward(request, response);
+            }
             String nombre = request.getParameter("nombre");
             String email = request.getParameter("email");
-            int telefono = Integer.parseInt(request.getParameter("telefono"));
+            int telefono = 0;
+            try {
+                telefono = Integer.parseInt(request.getParameter("telefono"));
+            } catch (Exception e) {
+                request.setAttribute("mensaje", "numero");
+                request.getRequestDispatcher("nuevoCliente.jsp").forward(request, response);
+            }
             
-            ClienteVO cvo = new ClienteVO();
-            cvo.setCedula(cedula);
-            cvo.setNombre(nombre);
-            cvo.setEmail(email);
-            cvo.setTelefono(telefono);
             
-            boolean inserta = this.cliente.insertar(cvo);
+            if (cedula != 0 && telefono != 0) {
             
-            if (inserta) {
-                request.setAttribute("mensaje", "error");
+                ClienteVO cvo = new ClienteVO();
+                cvo.setCedula(cedula);
+                cvo.setNombre(nombre);
+                cvo.setEmail(email);
+                cvo.setTelefono(telefono);
+
+                boolean inserta = this.cliente.insertar(cvo);
+
+                if (inserta) {
+                    request.setAttribute("mensaje", "error");
+                }else{
+                    request.setAttribute("mensaje", "ok");
+                }
             }else{
-                request.setAttribute("mensaje", "ok");
+                request.setAttribute("mensaje", "numero");
             }
             request.getRequestDispatcher("nuevoCliente.jsp").forward(request, response);
     }
