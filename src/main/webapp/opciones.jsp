@@ -204,6 +204,11 @@
                             <input class="btn" type="submit" value="Viajeros Solos">
                         </form>
                     </td>
+                    <td>
+                        <form action="PDFServlet">
+                            <input class="btn" type="submit" value="Crear PDF">
+                        </form>
+                    </td>
                 </tr>
             </table>
         </div>
