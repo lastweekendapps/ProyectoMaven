@@ -75,6 +75,10 @@
         <servlet-name>CorreoServlet</servlet-name>
         <servlet-class>controlador.CorreoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PDFServlet</servlet-name>
+        <servlet-class>controlador.PDFServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
         <url-pattern>/IndexServlet</url-pattern>
@@ -142,6 +146,10 @@
     <servlet-mapping>
         <servlet-name>CorreoServlet</servlet-name>
         <url-pattern>/CorreoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PDFServlet</servlet-name>
+        <url-pattern>/PDFServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
