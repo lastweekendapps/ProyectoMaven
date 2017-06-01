@@ -127,7 +127,7 @@
             String name = (String) mySession.getAttribute("nombre");
         %>
         
-        <%if(mySession==null){%>
+        <%if(name==null){%>
       
         <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
         
