@@ -126,6 +126,13 @@
         <%HttpSession mySession = request.getSession();
             String name = (String) mySession.getAttribute("nombre");
         %>
+        
+        <%if(mySession==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
+        
         <div id="header">
             <ul class="nav">
 
