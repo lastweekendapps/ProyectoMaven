@@ -8,9 +8,13 @@ package controlador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
@@ -34,11 +38,11 @@ public class CorreoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, AddressException, MessagingException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
             /* TODO output your page here. You may use following sample code. */
-            try {
+            //try {
                 
                 String usuario = request.getParameter("usuario");
                 String pass = request.getParameter("password");
@@ -71,12 +75,9 @@ public class CorreoServlet extends HttpServlet {
 
                 // Cierre.
                 t.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            
-            
-        }
+            //} catch (Exception e) {
+              //  e.printStackTrace();
+            //}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -91,7 +92,11 @@ public class CorreoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (MessagingException ex) {
+            Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -105,7 +110,11 @@ public class CorreoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (MessagingException ex) {
+            Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
