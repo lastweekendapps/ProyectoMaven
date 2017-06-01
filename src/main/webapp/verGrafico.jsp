@@ -125,10 +125,10 @@
         <div>
             <div class="col3 titulo"><h3>GRÁFICOS Y DESCARGA EN EXCEL</h3></div>
             <div class="col3 logo"><image src="logo_pagina.png"/></div>
-            <img src="ChartServlet" /><br/>
-            Descargar Excel <a href="HSSFCreate">Descargar</a> 
+             
         </div>
-
+        <img src="ChartServlet" /><br/>
+        Descargar Excel <a href="HSSFCreate">Descargar</a>
 
     </body>
 </html>
