@@ -147,6 +147,15 @@
         <title>Lista de Recordatorios</title>
     </head>
     <body>
+        <%HttpSession mySession = request.getSession();
+            String nname = (String) mySession.getAttribute("nombre");
+        %>
+        
+        <%if(nname==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
         <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title"><h2>Lista Recordatorios</h2></div>
         <%ArrayList registros = (ArrayList) request.getAttribute("recordatorios");%>
