@@ -123,10 +123,10 @@
     </head>
     <body>
         <%HttpSession mySession = request.getSession();
-            String name = (String) mySession.getAttribute("nombre");
+            String nname = (String) mySession.getAttribute("nombre");
         %>
         
-        <%if(name==null){%>
+        <%if(nname==null){%>
       
         <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
         
