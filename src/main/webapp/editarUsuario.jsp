@@ -115,6 +115,13 @@
         <%HttpSession mySession = request.getSession();
             UsuarioVO vo = (UsuarioVO) mySession.getAttribute("user");
         %>
+        
+        
+        <%if(vo==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
         <div class="logo"><a href="opciones.jsp"><image src="logo_pagina.png"/></a></div>
         <div class="title">
             <h2>Cambiar Contraseña</h2>
