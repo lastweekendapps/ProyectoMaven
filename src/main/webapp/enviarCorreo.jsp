@@ -125,6 +125,15 @@
         </style>    
     </head>
     <body>
+        <%HttpSession mySession = request.getSession();
+            String nname = (String) mySession.getAttribute("nombre");
+        %>
+        
+        <%if(nname==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
         <div class="logo"><image src="logo_pagina.png"/></div>
         <div class="title"><h2>ENVIAR CORREO</h2></div><br>
         <div class="form">
