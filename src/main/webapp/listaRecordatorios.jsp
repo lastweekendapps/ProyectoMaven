@@ -167,14 +167,14 @@
                 <td>Descripcion</td>
             </tr>
             <%if (registros != null) {
-                for (int i = 0; i < registros.size(); i+=4) {%>
+                //for (int i = 0; i < registros.size(); i+=4) {%>
             <tr>
-                <td><%=registros.get(i)%></td>
-                <td><%=registros.get(i+1)%></td>
-                <td><%=registros.get(i+2)%></td>
-                <td><%=registros.get(i+3)%></td>
+                <td><%=registros.get(0)%></td>
+                <td><%=registros.get(1)%></td>
+                <td><%=registros.get(2)%></td>
+                <td><%=registros.get(3)%></td>
             </tr>
-            <%  }
+            <%  //}
             }%>
         </table>
     </body>
