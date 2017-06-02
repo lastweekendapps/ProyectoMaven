@@ -171,8 +171,6 @@
             <tr>
                 <td><%=registros.get(0)%></td>
                 <td><%=registros.get(1)%></td>
-                <!--<td><%//=registros.get(2)%></td>
-                <td><%=//registros.get(3)%></td>-->
             </tr>
             <%  //}
             }%>
