@@ -27,6 +27,12 @@
             <artifactId>mail</artifactId>
             <version>1.4</version>
 	</dependency>
+	    <!-- https://mvnrepository.com/artifact/org.jfree/jcommon -->
+	<dependency>
+    		<groupId>org.jfree</groupId>
+	    	<artifactId>jcommon</artifactId>
+	    	<version>1.0.23</version>
+	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
         <dependency>
             <groupId>com.itextpdf</groupId>
