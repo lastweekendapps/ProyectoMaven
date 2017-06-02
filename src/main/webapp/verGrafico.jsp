@@ -122,6 +122,15 @@
         </style>
     </head>
     <body>
+        <%HttpSession mySession = request.getSession();
+            String nname = (String) mySession.getAttribute("nombre");
+        %>
+        
+        <%if(nname==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
         <div>
             <div class="col3 titulo"><h3>GRÁFICOS Y DESCARGA EN EXCEL</h3></div>
             <div class="col3 logo"><image src="logo_pagina.png"/></div>
