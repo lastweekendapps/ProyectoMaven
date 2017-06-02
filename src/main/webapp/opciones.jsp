@@ -216,6 +216,7 @@
                     </td>
                     <td>
                         <form action="PDFServlet">
+                            Path de descarga<input type="text" name="path"><br>
                             <input class="btn" type="submit" value="Crear PDF">
                         </form>
                     </td>
