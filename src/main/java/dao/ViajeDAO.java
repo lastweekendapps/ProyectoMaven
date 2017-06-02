@@ -151,7 +151,7 @@ public class ViajeDAO {
     
     public ArrayList <ViajeVO> getMatch(String destino){
         ArrayList <ViajeVO> viajes = new ArrayList();
-        String query = "select * from Viajes where Destino = "+destino+" and CantidadPersonas = 0";
+        String query = "select * from Viajes where Destino = '"+destino+"' and CantidadPersonas = 0";
         //Statement
             Statement statement;
         try {
