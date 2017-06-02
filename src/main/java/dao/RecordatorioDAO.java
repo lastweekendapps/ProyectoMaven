@@ -57,7 +57,7 @@ public class RecordatorioDAO {
     public ArrayList listarTodo(){
        //1.Consulta
        ArrayList respuesta = new ArrayList();
-       String consulta ="SELECT IdRecordatorios, FechaRecordatorios, Hora, Descripcion FROM Recordatorios";
+       String consulta ="SELECT * FROM Recordatorios";
         try {
             //----------------------------
             //Statement
