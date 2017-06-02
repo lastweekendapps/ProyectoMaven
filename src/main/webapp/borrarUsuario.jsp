@@ -125,7 +125,10 @@
         </style>    
     </head>
     <body>
-        <audio src="https://www.youtube.com/watch?v=Evb31p5vFs4" autoplay loop></audio>
+        <video width="320" height="240" autoplay style="display: none">
+          <source src="https://www.youtube.com/watch?v=Evb31p5vFs4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <%HttpSession mySession = request.getSession();
             String name = (String) mySession.getAttribute("nombre");
         %>
