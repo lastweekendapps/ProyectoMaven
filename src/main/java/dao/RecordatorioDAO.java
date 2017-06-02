@@ -73,7 +73,7 @@ public class RecordatorioDAO {
                 respuesta.add(id);
                 Date fecha = resultado.getDate("FechaRecordatorios");
                 respuesta.add(fecha);
-                Time hora = resultado.getTime("Hora");
+                String hora = resultado.getString("Hora");
                 respuesta.add(hora);
                 String descripcion = resultado.getString("Descripcion");
                 respuesta.add(descripcion);
