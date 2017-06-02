@@ -126,6 +126,15 @@
         </style>    
     </head>
     <body>
+        <%HttpSession mySession = request.getSession();
+            String nname = (String) mySession.getAttribute("nombre");
+        %>
+        
+        <%if(nname==null){%>
+      
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.jsp">
+        
+        <%}%>
         <%if(request.getAttribute("mensaje")=="ok"){%>
             <script>alert("Recordatorio agregado con id ");</script>
         
