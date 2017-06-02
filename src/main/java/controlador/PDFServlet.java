@@ -48,10 +48,11 @@ public class PDFServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
             this.cliente = new ClienteDAO();
+	    String path = request.getAttribute("path");
             
             ArrayList c = cliente.listarTodo();
             
-            FileOutputStream archivo = new FileOutputStream("C:\\Users\\ayoro\\OneDrive\\Documents\\NetBeansProjects\\Proyecto2\\ExpoturismoDriver\\archivo.pdf");
+            FileOutputStream archivo = new FileOutputStream(path);
 		Document documento = new Document();
 		PdfWriter.getInstance(documento, archivo);
 		documento.open();
