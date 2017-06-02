@@ -48,7 +48,7 @@ public class PDFServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
             this.cliente = new ClienteDAO();
-	    String path = request.getAttribute("path");
+	    String path = (String) request.getAttribute("path");
             
             ArrayList c = cliente.listarTodo();
             
